@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace Vieleck
 {
-    public partial class Form1 : Form
+    public partial class frm_start : Form
     {
-        public Form1()
+        
+        public frm_start()
         {
             InitializeComponent();
+        }
+
+        private void cmd_berechnen_Click(object sender, EventArgs e)
+        {
+            Vieleck vieleck = new Vieleck(Convert.ToDouble(tb_seitenanzahl.Text), Convert.ToDouble(tB_seitenlaenge.Text));
+            lbl_ausgabe.Text = vieleck.Flaecheninhalt.ToString();
         }
     }
 }
