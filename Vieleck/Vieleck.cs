@@ -9,6 +9,37 @@ namespace Vieleck
     class Vieleck
     {
         private double flaecheninhalt = 0;
+        private double seitenanzahl;
+        private double seitenlaenge;
+
+        public double Seitenanzahl
+        {
+            get
+            {
+                return this.seitenanzahl;
+            }
+            set
+            {
+                if (value > 2)
+                {
+                    this.seitenanzahl = value;
+                }
+            }
+        }
+        public double Seitenlaenge
+        {
+            get
+            {
+                return this.seitenlaenge;
+            }
+            set
+            {
+                if (value > 0)
+                {
+                    this.seitenlaenge = value;
+                }
+            }
+        }
         public double Flaecheninhalt
         {
             get
@@ -20,14 +51,11 @@ namespace Vieleck
 
             }
         }
-        public Vieleck(double seitenanzahl, double seitenlaenge)
-        {
-            berechneFlaecheninhalt(seitenanzahl, seitenlaenge);
-        }
+       
 
-        private void berechneFlaecheninhalt(double seitenanzahl, double seitenlaenge)
+        public void berechneFlaecheninhalt()
         {
-            this.flaecheninhalt = (seitenanzahl * Math.Pow(seitenlaenge, 2.0) / (4.0 * Math.Tan((Math.PI / seitenanzahl))));
+            this.flaecheninhalt = (this.seitenanzahl * Math.Pow(this.seitenlaenge, 2.0) / (4.0 * Math.Tan((Math.PI / this.seitenanzahl))));
             
         }
     }
