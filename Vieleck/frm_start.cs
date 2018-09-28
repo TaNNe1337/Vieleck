@@ -23,7 +23,7 @@ namespace Vieleck
             Vieleck vieleck = new Vieleck();
             vieleck.Seitenanzahl = Convert.ToDouble(tb_seitenanzahl.Text);
             vieleck.Seitenlaenge = Convert.ToDouble(tB_seitenlaenge.Text);
-            vieleck.berechneFlaecheninhalt();
+            vieleck.berechneFlaecheninhalt(); 
             lbl_ausgabe.Text = vieleck.Flaecheninhalt.ToString();
         }
     }
